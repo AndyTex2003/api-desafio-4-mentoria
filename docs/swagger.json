@@ -1,0 +1,104 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Cavaleiros do Zodíaco",
+    "version": "1.0.0",
+    "description": "API em memória para cadastro de Cavaleiros do Zodíaco"
+  },
+  "paths": {
+    "/cavaleiros": {
+      "post": {
+        "summary": "Cadastra um cavaleiro",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cavaleiro"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Armadura": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "armaduraDivina": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Cavaleiro": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "constelacao": {
+            "type": "string"
+          },
+          "nivel": {
+            "type": "string",
+            "enum": [
+              "BRONZE",
+              "PRATA",
+              "OURO"
+            ]
+          },
+          "cosmo": {
+            "type": "number"
+          },
+          "dataNascimento": {
+            "type": "string",
+            "format": "date"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "VIVO",
+              "FERIDO",
+              "MORTO"
+            ]
+          },
+          "armadura": {
+            "$ref": "#/components/schemas/Armadura"
+          },
+          "habilidades": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "nome",
+          "constelacao",
+          "nivel",
+          "cosmo",
+          "status",
+          "armadura",
+          "habilidades"
+        ]
+      }
+    }
+  }
+}
