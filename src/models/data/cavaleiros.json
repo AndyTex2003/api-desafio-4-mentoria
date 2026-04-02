@@ -1,0 +1,19 @@
+[
+  {
+    "id": 120,
+    "nome": "LEONARDO",
+    "constelacao": "PEIXES",
+    "nivel": "PRATA",
+    "cosmo": 60,
+    "dataNascimento": "2012-03-15",
+    "status": "VIVO",
+    "armadura": {
+      "nome": "ARMADURA DE PEIXES",
+      "armaduraDivina": false
+    },
+    "habilidades": [
+      "GOLPE AQUATICO",
+      "TORCEDOR DO PALMEIRAS"
+    ]
+  }
+]
