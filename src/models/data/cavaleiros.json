@@ -15,5 +15,39 @@
       "GOLPE AQUATICO",
       "TORCEDOR DO PALMEIRAS"
     ]
+  },
+  {
+    "id": 100,
+    "nome": "Seiya",
+    "constelacao": "Pégaso",
+    "nivel": "BRONZE",
+    "cosmo": 85,
+    "dataNascimento": "2000-12-01",
+    "status": "VIVO",
+    "armadura": {
+      "nome": "Armadura de Pégaso",
+      "armaduraDivina": false
+    },
+    "habilidades": [
+      "Meteoro de Pégaso",
+      "Cometa de Pégaso"
+    ]
+  },
+  {
+    "id": 300,
+    "nome": "Seiya",
+    "constelacao": "Pégaso",
+    "nivel": "BRONZE",
+    "cosmo": 85,
+    "dataNascimento": "2000-12-01",
+    "status": "VIVO",
+    "armadura": {
+      "nome": "Armadura de Pégaso",
+      "armaduraDivina": false
+    },
+    "habilidades": [
+      "Meteoro de Pégaso",
+      "Cometa de Pégaso"
+    ]
   }
 ]
