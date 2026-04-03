@@ -8,26 +8,27 @@ Principais mudanças/recursos
 - Persistência simples em arquivo: `src/models/data/cavaleiros.json` (arquivo criado automaticamente e ignorado pelo git).
 - Relatórios de teste com `mochawesome` gerando `reports/mochawesome.html` e `reports/mochawesome.json`.
 
-Pré-requisitos
+## Pré-requisitos
 
 - Node.js >= 18
 
-Instalação
+## Instalação
 
 ```bash
 npm install
 ```
 
-Variáveis de ambiente
+## Configuração do Ambiente
 
-Crie um arquivo `.env` na raiz (exemplo já incluído):
+Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo:
 
 ```
 PORT=3000
-NODE_ENV=development
 ```
 
-Rodar servidor
+Você pode alterar o valor da porta se desejar rodar o servidor em outra porta.
+
+## Rodar servidor
 
 ```bash
 npm start
@@ -35,9 +36,7 @@ npm start
 npm run dev
 ```
 
-Por padrão o servidor usa `process.env.PORT` (fallback 3000). A documentação Swagger fica disponível em `/api-docs`.
-
-Abrir documentação Swagger
+## Abrir documentação Swagger
 
 Após iniciar o servidor, abra:
 
@@ -57,7 +56,7 @@ Scripts úteis
 - `npm run dev` — inicia com `nodemon`
 - `npm test` — executa os testes com Mocha e gera relatório Mochawesome em `reports/` (HTML + JSON)
 
-Executar testes e visualizar relatório
+## Executar testes
 
 ```bash
 npm test
@@ -67,32 +66,6 @@ xdg-open reports/mochawesome.html # Linux
 # ou abra manualmente o arquivo HTML no Windows
 ```
 
-Observações e recomendações
-
-- A persistência em arquivo é adequada para desenvolvimento e demos. Para produção, use um banco de dados apropriado.
-- As operações de leitura/escrita são síncronas por simplicidade e previsibilidade em testes. Se houver necessidades de desempenho ou concorrência, refatore para acesso assíncrono e controle de concorrência.
-- Se quiser que eu adicione um endpoint para limpar o arquivo `cavaleiros.json` (útil para testes), eu posso implementar rapidamente.
-
-Estrutura recomendada (resumida)
-
-```
-src/
-	config/
-	controllers/
-	middlewares/
-	models/
-		data/cavaleiros.json
-	routes/
-	services/
-	helpers/
-tests/
-	integration/
-	unit/
-	fixtures/
-server.js
-app.js
-package.json
-README.md
-```
+## Observações
 
 Se quiser, eu executo os testes agora e posto os resultados/trechos do relatório. Também posso adicionar um pequeno script para limpar a persistência entre execuções de teste se preferir.

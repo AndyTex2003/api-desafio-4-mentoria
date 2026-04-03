@@ -102,4 +102,25 @@ describe('POST /cavaleiros', () => {
     const r2 = await request(app).post('/cavaleiros').send(p);
     expect(r2.status).to.equal(400);
   });
+
+  it('falha se cosmo for negativo', async () => {
+    const res = await request(app).post('/cavaleiros').send({ ...base, id: 403, cosmo: -10 });
+    expect(res.status).to.equal(400);
+    expect(res.body.message).to.match(/Cosmo deve ser número >= 0/);
+
+  });
+
+  it('falha se nome tiver mais de 50 caracteres', async () => {
+    const nomeLongo = 'A'.repeat(51);
+    const res = await request(app).post('/cavaleiros').send({ ...base, id: 401, nome: nomeLongo });
+    expect(res.status).to.equal(400);
+    expect(res.body.message).to.match(/Nome deve ter entre 2 e 50 caracteres/);
+  });
+
+  it('falha se constelação tiver mais de 20 caracteres', async () => {
+    const constelacaoLonga = 'C'.repeat(21);
+    const res = await request(app).post('/cavaleiros').send({ ...base, id: 402, constelacao: constelacaoLonga });
+    expect(res.status).to.equal(400);
+    expect(res.body.message).to.match(/Constelação deve ter entre 4 e 20 caracteres/);
+  });
 });
